@@ -46,6 +46,7 @@ fn main() {
                         .next()
                         .expect("Tried to print a character but EOF was reached.");
                     print!("{}", c as char);
+                    let _ = io::stdout().flush();
                 }
                 1 => {
                     let var = instr_iter
@@ -79,6 +80,7 @@ fn main() {
                     let value = variables.get(&var).map(|&v| v).unwrap_or_default();
 
                     print!("{}", value as char);
+                    let _ = io::stdout().flush();
                 }
                 _ => {
                     println!("Unknown instruction: {:08b}", instruction);

@@ -1,7 +1,7 @@
 use std::collections::HashMap;
 use std::env;
 use std::fs::File;
-use std::io::{BufRead, BufReader};
+use std::io::{self, BufRead, BufReader};
 
 #[derive(Copy, Clone, PartialEq, Eq)]
 enum Instruction {
@@ -19,7 +19,7 @@ fn main() {
     let mut instructions = Vec::new();
 
     for line in BufReader::new(input_file).lines() {
-        let line = line.expect("Failed to read input file.");
+        let line = line.expect("Failed to read from input file.");
 
         if line.len() > 0 {
             let mut splitted = line.split_whitespace();
@@ -74,8 +74,10 @@ fn main() {
                 if use_chars {
                     if value <= 255 {
                         print!("{}", value as u8 as char);
+                        let _ = io::stdout().flush();
                     } else {
                         print!("{}", value);
+                        let _ = io::stdout().flush();
                     }
                 } else {
                     println!("{}", value);

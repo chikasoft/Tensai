@@ -5,6 +5,10 @@ name = "binary"
 version = "0.1.0"
 
 [[package]]
+name = "interstack"
+version = "0.1.0"
+
+[[package]]
 name = "minsky"
 version = "0.1.0"
 

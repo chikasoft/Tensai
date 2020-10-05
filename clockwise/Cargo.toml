@@ -1,0 +1,8 @@
+[package]
+name = "clockwise"
+version = "0.1.0"
+authors = ["CHIKASOFT"]
+edition = "2018"
+
+[dependencies]
+rand = "0.7"

@@ -3,4 +3,5 @@ members = [
 	"minsky",
     "binary",
     "interstack",
+    "clockwise",
 ]
